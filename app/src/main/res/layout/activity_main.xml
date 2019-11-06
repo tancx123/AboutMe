@@ -5,7 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="myName"
+            type="com.example.aboutme.MyName" />
     </data>
 
     <LinearLayout
@@ -18,9 +20,10 @@
         android:id="@+id/name_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/name"
+        android:text="@={myName.name}"
         android:textAlignment="center"
-        style="@style/NameStyle" />
+        style="@style/NameStyle"
+        android:textColor="@android:color/black"/>
 
     <EditText
         android:id="@+id/nickname_edit"
@@ -50,8 +53,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:visibility="gone"
-        android:text=""/>
+        android:text="@={myName.nickname}"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/star_image"
